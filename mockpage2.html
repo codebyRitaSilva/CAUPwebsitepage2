@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3, user-scalable=yes">
+    <meta name="title" content="Centro de Astrofísica da Universidade do Porto">
+    <meta name="description" content="Centro de Astrofísica da Universidade do Porto">
+	<meta name="keywords" content="Astronomia">
+
+    <link rel="stylesheet" type="text/css" href="css/stylemock2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <title>Centro de Astrofísica U.Porto</title>
+
+<script>
+
+// funcao para abrir o menu hamburguer (400px em ecras MD, LG, XL e XXL; 300px em ecras SM e XS)
+function openNav() {
+  const sidenav = document.getElementById("sidenav");
+
+  if (window.innerWidth <= 768) {
+
+    sidenav.style.width = sidenav.style.width === "300px" ? "0" : "300px";
+  } else {
+
+    sidenav.style.width = sidenav.style.width === "400px" ? "0" : "400px";
+  }
+}
+
+// funcoes para ativar os overlays da pagina
+
+function showOverlaydownmenu() {
+  document.querySelector('.overlay').style.opacity = 1;
+}
+function hideOverlaydownmenu() {
+  document.querySelector('.overlay').style.opacity = 0;
+}
+
+function showOverlayupmenu() {
+  document.querySelector('.overlayup').style.opacity = 1;
+}
+function hideOverlayupmenu() {
+  document.querySelector('.overlayup').style.opacity = 0;
+}
+
+
+// funcao para ativar os dropdown menus dos ecras XS
+
+function toggleDropdown(button) {
+  const container = button.closest('.container-fluid');
+  const submenu = container.querySelector('.submenu');
+
+  const isOpen = submenu.classList.contains('open');
+
+  document.querySelectorAll('.submenu').forEach(menu => {
+    menu.style.maxHeight = null;
+    menu.classList.remove('open');
+  });
+
+  if (!isOpen) {
+    submenu.classList.add('open');
+    submenu.style.maxHeight = submenu.scrollHeight + 'px';
+  } else {
+    submenu.style.maxHeight = null;
+  }
+}
+
+
+</script>
+</head>
+
+<body dir="ltr">
+    
+    <main>
+        
+      <!-- menu institucional (apenas ecrãs XL e XXL) -->
+
+        <header class="header-up">
+                   <div class="container-fluid">
+    <div class="row">
+              <div class="d-none d-xl-block col-xl-1 col-xxl-1"></div>
+                            <div class="d-none d-xl-block col-xl-10 col-xxl-10">
+                <nav class="menu">
+                    <ul id="categoriasheaderup">
+                        <li onclick="toggleDropdown2(this)"><a href="#" class="active" title="INÍCIO" target="_self"  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()">Início</a>
+                        <li onclick="toggleDropdown2(this)"><a href="#" class="active" title="SOBRE NÓS" target="_self"  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()">Sobre Nós</a>
+                            <ul style="padding-top: 10px;"  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()">
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a  href="#" title="MISSÃO E OBJETIVOS" target="_self" class="vibrate">Missão e Objetivos</a></li>
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="HISTÓRIA" target="_self" class="vibrate">História</a></li>
+                                <li onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="EQUIPA" target="_self" class="vibrate">Equipa</a></li>
+                                <li onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="CONTACTOS" target="_self" class="vibrate">Contactos</a></li>
+                            </ul>
+                        <li onclick="toggleDropdown2(this)"><a href="#" class="active" title="INVESTIGAÇÃO" target="_self"  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()">Investigação</a>
+                            <ul onclick="toggleDropdown2(this)" style="padding-top: 10px;"  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()">
+                                <li onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="ÁREAS DE INVESTIGAÇÃO" target="_self" class="vibrate">Áreas de Investigação</a></li>
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="PROJETOS" target="_self" class="vibrate">Projetos</a></li>
+                                <li onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="PUBLICAÇÕES" target="_self" class="vibrate">Publicações</a></li>
+                                <li onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="IA" target="_self" class="vibrate">Instituto de Astrofísica e Ciências do Espaço (IA)</a></li>
+                            </ul>
+                        </li>
+
+                        <li onclick="toggleDropdown2(this)"><a href="#" title="FORMAÇÃO" target="_self"  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()">Formação</a>
+                            <ul onclick="toggleDropdown2(this)" style="padding-top: 10px;"  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()">
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="CURSOS" target="_self" class="vibrate">Cursos</a></li>
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="ASTROCAMP" target="_self" class="vibrate">AstroCamp</a></li>
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="ESTÁGIOS" target="_self" class="vibrate">Estágios</a></li>
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="COLABORAÇÃO COM FCUP" target="_self" class="vibrate">Colaboração com FCUP</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li onclick="toggleDropdown2(this)" onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="DIVULGAÇÃO" target="_self">Divulgação</a>
+                            <ul onclick="toggleDropdown2(this)" style="padding-top: 10px;"  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()">
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="ATIVIDADES" target="_self" class="vibrate">Atividades</a></li>
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="RECURSOS EDUCATIVOS" target="_self" class="vibrate">Recursos Educativos</a></li>
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="NOTÍCIAS" target="_self" class="vibrate">Notícias</a></li>
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="PLANETÁRIO DO PORTO" target="_self">Planetário do Porto - CCV</a></li>
+                            </ul>
+                        </li>
+
+                        <li onclick="toggleDropdown2(this)" onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="PLANETÁRIO DO PORTO" target="_self">Planetário do Porto</a>
+                            <ul onclick="toggleDropdown2(this)" style="padding-top: 10px;"  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()">
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="SOBRE O PLANETÁRIO" target="_self" class="vibrate">Sobre o Planetário</a></li>
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="PROGRAMAÇÃO" target="_self" class="vibrate">Programação</a></li>
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="BILHETES" target="_self" class="vibrate">Bilhetes</a></li>
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="CONTACTOS" target="_self">Contactos</a></li>
+                            </ul>
+                        
+                        </li>
+                        <li onclick="toggleDropdown2(this)" onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="LINKS ÚTEIS" target="_self">Links Úteis</a>
+                            <ul onclick="toggleDropdown2(this)" style="padding-top: 10px;"  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()">
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="https://www.up.pt/portal/pt/" title="UNIVERSIDADE DO PORTO" target="_blank" class="vibrate">Universidade do Porto</a></li>
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="https://www.iastro.pt/" title="IA" target="_blank" class="vibrate">Instituto de Astrofísica e Ciências do Espaço (IA)</a></li>
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="https://www.eso.org/public/" title="ESO" target="_blank" class="vibrate">European Southern Observatory (ESO)</a></li>
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="https://www.esa.int/" title="ESA" target="_blank">ESA</a></li>
+                                <li  onmouseover="showOverlayupmenu()" onmouseout="hideOverlayupmenu()"><a href="#" title="OUTROS PARCEIROS" target="_self">Outros Parceiros</a></li>
+                            </ul>
+
+                        </li>
+                        <li><a href="#" title="LOGIN" class="login"> 
+ <span class="login-text">Login</span>
+                          </a></li>
+                          
+
+                    </ul>
+                </nav>
+            
+            
+            </div>
+                                                              <div class="d-none d-xl-block col-xl-1 col-xxl-1"></div>
+                        </div>
+            </div>
+            
+        </header>
+
+
+        <div class="overlayup"></div>
+
+
+      <!-- header menu geral (ecras XXL, XL, LG) -->
+
+        <header class="header-down">
+          <div class="container-fluid">
+    <div class="row align-items-center" style="height: 80px;">
+                    <div class="d-none d-lg-block col-lg-1 col-xl-1 col-xxl-1"></div>
+                            <div class="d-none d-lg-block col-lg-2 col-xl-4 col-xxl-4 d-flex align-items-center">
+                <div class="logo-top">
+                    <a href="indexcaup.html" title="CAUP"><img src="imagens/CAUP_logo_vector-rgb.svg" alt="CAUP" /></a>
+                </div>
+ </div>
+                            <div class="col-4 col-sm-3 col-md-3 d-lg-none d-flex align-items-center justify-content-center">
+                <div class="logo-top">
+                    <a href="indexcaup.html" title="CAUP"><img src="imagens/CAUP_logo_vector-rgb.svg" alt="CAUP" /></a>
+                </div>
+                </div>
+                                    <div class="d-none d-lg-block col-lg-1 d-xl-none"></div>
+             <div class="col-5 col-sm-7 d-md-none"></div>
+                                            <div class="d-none d-md-block col-md-8 col-lg-7 col-xl-6 col-xxl-6 d-flex align-items-center">
+ 
+                <nav class="menu">
+
+
+
+                    <ul id="categoriasheaderdown">
+
+
+                        <li onclick="toggleDropdown1(this)"  onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()" title="INVESTIGAÇÃO">
+                          
+<button style=" width: 150px;
+                padding: 10px 20px;
+                background-color: transparent;
+                text-align: center;
+                display: inline-block;
+                display: inline-block;
+                padding: 0;
+                font: 900 16px / 30% Roboto, Arial, Helvetica, sans-serif;
+                text-transform: uppercase;
+                border: none;
+                z-index: 2;
+                background-color: #004982;
+                border-style: none;
+
+                box-sizing: border-box;
+                color: white;
+                cursor: pointer;
+                display: inline-block;
+                font-family: 'Roboto';
+                font-weight: 700;
+                letter-spacing: -.24px;
+                margin: 0;
+                outline: none;
+                padding: 1rem 1.3rem;
+                quotes: auto;
+                text-align: center;
+                text-decoration: none;
+                transition: all .15s;
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;">INVESTIGAÇÃO</button>
+                            <ul style="padding-top: 16px;" onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()">
+                                <li  onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()"><a  href="#" title="GRUPOS DE INVESTIGAÇÃO DO IA" target="_self" class="vibrate">GRUPOS DE INVESTIGAÇÃO DO IA</a></li>
+                                <li onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()"><a href="#" title="NOTÍCIAS DO IA" target="_self" class="vibrate">NOTÍCIAS DO IA</a></li>
+                            </ul>
+                        </li>
+
+                        <li onclick="toggleDropdown1(this)" onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()"  title="FORMAÇÃO">
+                          
+<button style="width: 150px;
+               padding: 10px 20px;
+               background-color: transparent;
+               text-align: center;
+               display: inline-block; 
+              display: inline-block;
+              padding: 0;
+              font: 900 16px / 30% Roboto, Arial, Helvetica, sans-serif;
+              text-transform: uppercase;
+              border: none;
+              z-index: 2;
+              background-color: #004982;
+              border-style: none;
+
+              box-sizing: border-box;
+              color: white;
+              cursor: pointer;
+              display: inline-block;
+              font-family: 'Roboto';
+              font-weight: 700;
+              letter-spacing: -.24px;
+              margin: 0;
+              outline: none;
+              padding: 1rem 1.3rem;
+              quotes: auto;
+              text-align: center;
+              text-decoration: none;
+              transition: all .15s;
+              user-select: none;
+              -webkit-user-select: none;
+              touch-action: manipulation;">FORMAÇÃO</button>
+                            <ul style="padding-top: 16px;"  onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()">
+                                <li  onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()"><a href="/en/the-project/" title="OFERTA FORMATIVA" target="_self" class="vibrate">OFERTA FORMATIVA</a></li>
+                                <li  onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()"><a href="/en/the-project/" title="NOTÍCIAS DA FORMAÇÃO" target="_self" class="vibrate">NOTÍCIAS DA FORMAÇÃO</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li onclick="toggleDropdown1(this)" onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()" title="DIVULGAÇÃO">
+                          
+<button style="width: 150px;
+              padding: 10px 20px;
+              background-color: transparent;
+              text-align: center;
+              display: inline-block; 
+              display: inline-block;
+              padding: 0;
+              font: 900 16px / 30% Roboto, Arial, Helvetica, sans-serif;
+              text-transform: uppercase;
+              border: none;
+              z-index: 2;                          
+              background-color: #004982;
+              border-style: none;
+
+              box-sizing: border-box;
+              color: white;
+              cursor: pointer;
+              display: inline-block;
+              font-family: 'Roboto';
+              font-weight: 700;
+              letter-spacing: -.24px;
+              margin: 0;
+              outline: none;
+              padding: 1rem 1.3rem;
+              quotes: auto;
+              text-align: center;
+              text-decoration: none;
+              transition: all .15s;
+              user-select: none;
+              -webkit-user-select: none;
+              touch-action: manipulation;">DIVULGAÇÃO</button>
+                            <ul style="padding-top: 16px;"  onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()">
+                                <li  onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()"><a href="#" title="COMUNICAÇÃO DO IA E NOTÍCIAS" target="_self" class="vibrate">COMUNICAÇÃO DO IA E NOTÍCIAS</a></li>
+                                <li  onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()"><a href="#" title="PLANETÁRIO DO PORTO" target="_self" class="vibrate">PLANETÁRIO DO PORTO</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+
+
+                </nav>
+</div>
+                  <!-- botao menu hamburguer (ecrãs LG, MD, SM, XS) -->
+                                    <div class="col-3 col-sm-2 col-md-1 col-lg-1 d-xl-none">
+                <span class="btn-mobile-menu open vibration vibrate" id="hammenu" style="margin-left: auto; margin-right: 10px;">
+                    <i class="fas fa-bars fa-lg iconspace" style=" font-size: 24px;" onclick="openNav()"></i>
+                </span>
+
+
+       <!-- menu hamburguer -->
+
+
+                    <div class="sidenav" id="sidenav">
+                        <div class="container-fluid">
+<div class="row no-gutters align-items-center" style="height: 80px;">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 d-xl-none d-flex justify-content-center">
+                              <div class="btn-mobile-menu open vibration vibrate" id="hammenu1" style="width: 35px;
+  background-color: #333333; 
+  z-index: 990;
+  color: white; margin-left: auto; padding-right: 32px;">
+                                  <i class="fas fa-bars fa-lg iconspace" style=" font-size: 24px;" id="hammenuinside" onclick="openNav()"></i>
+                                </div>
+                                </div>
+                                </div>
+                                 </div>
+                        <div class="toplist">
+                            
+                        <ul>
+
+                            <li>
+                                <a href="#" class="active" title="INVESTIGAÇÃO" target="_self">INVESTIGAÇÃO</a>
+                                <ul>
+                                    <li ><a href="#" title="GRUPOS DE INVESTIGAÇÃO DO IA">GRUPOS DE INVESTIGAÇÃO DO IA</a></li>
+                                    <li><a href="#" title="NOTÍCIAS DO IA">NOTÍCIAS DO IA</a></li>
+                                </ul>
+                              </li>
+
+                              <li>
+                                <a href="#" class="active" title="FORMAÇÃO" target="_self">FORMAÇÃO</a>
+                                <ul>
+                                    <li ><a href="#" title="OFERTA FORMATIVA">OFERTA FORMATIVA</a></li>
+                                    <li><a href="#" title="NOTÍCIAS DA FORMAÇÃO">NOTÍCIAS DA FORMAÇÃO</a></li>
+                                </ul>
+                              </li>
+
+                              <li>
+                                <a href="#" class="active" title="DIVULGAÇÃO" target="_self">DIVULGAÇÃO</a>
+                                <ul>
+                                    <li ><a href="#" title="COMUNICAÇÃO DO IA E NOTÍCIAS">COMUNICAÇÃO DO IA E NOTÍCIAS</a></li>
+                                    <li><a href="#" title="PLANETÁRIO DO PORTO">PLANETÁRIO DO PORTO</a></li>
+                                </ul>
+                              </li>
+                        </ul>
+
+                        
+                        </div>
+
+                       
+
+                        <div class="bottomlist">
+                            <ul>
+                              <li>
+                                <a href="#" class="active" title="INÍCIO" target="_self">Início</a>
+                              </li>
+                              <li>
+                                <a href="#" class="active" title="SOBRE NÓS" target="_self">Sobre Nós</a>
+                                <ul>
+                                  <li><a href="#"  title="MISSÃO E OBJETIVOS">Missão e Objetivos</a></li>
+                                  <li><a href="#" title="HISTÓRIA">História</a></li>
+                                  <li><a href="#" title="EQUIPA">Equipa</a></li>
+                                  <li><a href="#" title="CONTACTOS">Contactos</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="active" title="INVESTIGAÇÃO" target="_self">Investigação</a>
+                                <ul>
+                                  <li><a href="#" title="ÁREAS DE INVESTIGAÇÃO">Áreas de Investigação</a></li>
+                                  <li><a href="#" title="PROJETOS">Projetos</a></li>
+                                  <li><a href="#"  title="PUBLICAÇÕES">Publicações</a></li>
+                                  <li><a href="#" title="IA">IA</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="active" title="FORMAÇÃO" target="_self">Formação</a>
+                                <ul>
+                                    <li ><a href="#" title="CURSOS">Cursos</a></li>
+                                    <li  ><a href="#" title="ASTROCAMP">AstroCamp</a></li>
+                                    <li ><a href="#" title="ESTÁGIOS">Estágios</a></li>
+                                    <li ><a href="#" title="COLABORAÇÃO COM FCUP">Colaboração com FCUP</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="active" title="DIVULGAÇÃO" target="_self">Divulgação</a>
+                                <ul>
+                                    <li ><a href="#" title="ATIVIDADES">Atividades</a></li>
+                                    <li ><a href="#" title="RECURSOS EDUCATIVOS">Recursos Educativos</a></li>
+                                    <li ><a href="#" title="NOTÍCIAS">Notícias</a></li>
+                                    <li><a href="#" title="PLANETÁRIO DO PORTO">Planetário do Porto - CCV</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="active" title="PLANETÁRIO DO PORTO" target="_self">Planetário do Porto</a>
+                                <ul>
+
+                                    <li ><a href="#" title="SOBRE O PLANETÁRIO">Sobre o Planetário</a></li>
+                                    <li ><a href="#" title="PROGRAMAÇÃO">Programação</a></li>
+                                    <li ><a href="#" title="BILHETES">Bilhetes</a></li>
+                                    <li ><a href="#" title="CONTACTOS">Contactos</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#" class="active" title="LINKS ÚTEIS" target="_self">Links Úteis</a>
+                                <ul>
+                                    <li ><a href="#" title="UNIVERSIDADE DO PORTO">Universidade do Porto</a></li>
+                                    <li ><a href="#" title="IA">Instituto de Astrofísica e Ciências do Espaço (IA)</a></li>
+                                    <li ><a href="#" title="ESO">European Southern Observatory (ESO)</a></li>
+                                    <li ><a href="#" title="ESA">ESA</a></li>
+                                    <li  ><a href="#" title="OUTROS PARCEIROS">Outros Parceiros</a></li>
+                                </ul>
+                              </li>
+
+
+                            </ul>
+                          </div>
+
+<a href="#" title="LOGIN" class="loginham" style="
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 8px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+"> 
+  <p style="    font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px; color: white; margin-bottom: 0px;">Login</p></a>
+                    </div>
+                    </div>
+
+
+       <!-- END menu hamburguer -->
+
+
+                
+            </div>
+            
+            </div>
+        </header>
+
+       <!-- header menu geral (ecras MD, SM) -->
+
+        <header class="header-downmedium d-none d-sm-block d-md-none">
+          <div class="container-fluid">
+    <div class="row align-items-center" style="height: 50px; overflow: visible;">
+   <div class="d-none d-sm-block col-sm-1 col-md-1 d-lg-none"></div>
+      <div class="d-none d-sm-block col-sm-10 col-md-10 d-lg-none">
+                <nav class="menu">
+
+
+
+                    <ul id="categoriasheaderdown" style="display: flex;
+  justify-content: center;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;">
+
+
+                        <li onclick="toggleDropdown(this)" onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()"><a href="#" class="active" title="INVESTIGAÇÃO" target="_self">
+<button style="width: 150px;
+              padding: 10px 20px;
+              background-color: transparent;
+              text-align: center;
+              display: inline-block; 
+              display: inline-block;
+              padding: 0;
+              font: 900 16px / 30% Roboto, Arial, Helvetica, sans-serif;
+              text-transform: uppercase;
+              border: none;
+              background-color: #004982;
+              border-style: none;
+              box-sizing: border-box;
+              color: white;
+              cursor: pointer;
+              display: inline-block;
+              font-family: 'Roboto';
+              font-weight: 700;
+              letter-spacing: -.24px;
+              margin: 0;
+              outline: none;
+              padding: 1rem 1.3rem;
+              quotes: auto;
+              text-align: center;
+              text-decoration: none;
+              transition: all .15s;
+              user-select: none;
+              -webkit-user-select: none;
+              touch-action: manipulation; box-shadow: none;">INVESTIGAÇÃO</button></a>
+                            <ul style="padding-top: 5px;" onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()">
+                                <li onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()"><a href="#" title="GRUPOS DE INVESTIGAÇÃO DO IA" target="_self" class="vibrate">GRUPOS DE INVESTIGAÇÃO DO IA</a></li>
+                                <li onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()"><a href="#" title="NOTÍCIAS DO IA" target="_self" class="vibrate">NOTÍCIAS DO IA</a></li>
+                            </ul>
+                        </li>
+
+                        <li onclick="toggleDropdown(this)"  onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()"><a href="#" title="FORMAÇÃO" target="_self">
+<button style="width: 150px;
+              padding: 10px 20px;
+              background-color: transparent;
+              text-align: center;
+              display: inline-block; 
+              display: inline-block;
+              padding: 0;
+              font: 900 16px / 30% Roboto, Arial, Helvetica, sans-serif;
+              text-transform: uppercase;
+              border: none;
+              background-color: #004982;
+              border-style: none;
+              box-sizing: border-box;
+              color: white;
+              cursor: pointer;
+              display: inline-block;
+              font-family: 'Roboto';
+              font-weight: 700;
+              letter-spacing: -.24px;
+              margin: 0;
+              outline: none;
+              padding: 1rem 1.3rem;
+              quotes: auto;
+              text-align: center;
+              text-decoration: none;
+              transition: all .15s;
+              user-select: none;
+              -webkit-user-select: none;
+              touch-action: manipulation;box-shadow: none;">FORMAÇÃO</button></a>
+                            <ul style="padding-top: 5px;"  onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()">
+                                <li  onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()"><a href="#" title="OFERTA FORMATIVA" target="_self" class="vibrate">OFERTA FORMATIVA</a></li>
+                                <li  onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()"><a href="#" title="NOTÍCIAS DA FORMAÇÃO " target="_self" class="vibrate">NOTÍCIAS DA FORMAÇÃO</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li onclick="toggleDropdown(this)"  onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()"><a href="#" title="DIVULGAÇÃO" target="_self">
+                          
+<button style="width: 150px;
+              padding: 10px 20px;
+              background-color: transparent;
+              text-align: center;
+              display: inline-block; 
+              display: inline-block;
+              padding: 0;
+              font: 900 16px / 30% Roboto, Arial, Helvetica, sans-serif;
+              text-transform: uppercase;
+              border: none;
+              background-color: #004982;
+              border-style: none;
+
+              box-sizing: border-box;
+              color: white;
+              cursor: pointer;
+              display: inline-block;
+              font-family: 'Roboto';
+              font-weight: 700;
+              letter-spacing: -.24px;
+              margin: 0;
+              outline: none;
+              padding: 1rem 1.3rem;
+              quotes: auto;
+              text-align: center;
+              text-decoration: none;
+              transition: all .15s;
+              user-select: none;
+              -webkit-user-select: none;
+              touch-action: manipulation; box-shadow: none;">DIVULGAÇÃO</button></a>
+                            <ul style="padding-top: 5px;"  onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()">
+                                <li  onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()"><a href="#" title="COMUNICAÇÃO DO IA E NOTÍCIAS" target="_self" class="vibrate">COMUNICAÇÃO DO IA E NOTÍCIAS</a></li>
+                                <li  onmouseover="showOverlaydownmenu()" onmouseout="hideOverlaydownmenu()"><a href="#" title="PLANETÁRIO DO PORTO" target="_self" class="vibrate">PLANETÁRIO DO PORTO</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="d-none col-sm-1 d-md-none"></div>
+            </div>
+                
+            </div>
+        </header>
+
+
+
+
+
+        <div class="container-fluid" id="itemscontent" style="padding: 0; background-color: black;">
+
+<div class="overlay"></div>
+
+  <div class="col-12 col-sm-12 col-md-12 d-lg-none">                               
+           <div class="hero-imagesmall .resize-visible">
+        <div class="slideshow-wrapper">
+        <img src="imagens/indeximg.jpg" class="hero-slide img-fluid active" alt="Banner 1" style="object-position: right center;">
+        <img src="imagens/indeximg2.jpg" class="hero-slide img-fluid" alt="Banner 2" style="object-position: right center; background:red;">
+        <img src="imagens/indeximg3.jpg" class="hero-slide img-fluid" alt="Banner 3" style="object-position: right center;">
+        <img src="imagens/indeximg4.jpg" class="hero-slide img-fluid" alt="Banner 4" style="object-position: right center;">
+    </div>
+    </div>  
+</div>    
+
+
+<article id="content" >
+  <div style="height: 0px;"></div>
+        <div class="row d-flex">
+                                  <div class="d-none d-lg-block col-lg-1  col-xl-1 col-xxl-1 ml-auto" style="text-align:left"></div>
+                        <div class="d-none d-lg-block col-lg-4 col-xl-4 col-xxl-4 ml-auto" style="text-align:left">
+    <div class="pageTitle">
+<h1><span>Áreas de Investigação</span></h1>
+</div>
+
+</div>
+
+<div class="d-none d-lg-block col-lg-7 col-xl-7 col-xxl-7 ml-auto" style="text-align:left"></div>
+
+        </div>
+
+
+        <div class="row d-flex" >
+
+                                                    <div class="d-none d-lg-block col-lg-1 col-xl-1 col-xxl-1 ml-auto" style="text-align:left"></div>
+                  <div class="d-none d-lg-block col-lg-6 col-xl-6 col-xxl-6 ml-auto" style="text-align:left">
+
+    <div id="content-container">
+        <div class="content-block">
+            <div class="content-right">
+                <div class="allcontent">
+
+<div style="text-align: left; margin-bottom: 20px;">A investigação científica organiza-se em duas grandes equipas cuja actividade se centra nos seguintes tópicos:
+    </div>
+                    
+<div><h2><span style="" class="gca_html_editor_1">Origem e Evolução de Estrelas e Planetas</span></h2></div>
+<div style="text-align: left;"><p>O objectivo central do trabalho desta equipa inclui o estudo da física fundamental que rege a formação e evolução de estrelas e planetas. O trabalho desenvolvido pelos elementos da equipa tem uma forte componente observacional e ainda uma extensa contribuição teórica e de modelação.</p><a class="linkoncontent">Saber Mais</a>
+    </div>
+
+<br>
+<div><h2><span style=" " class="gca_html_editor_1">Galáxias e Cosmologia Observacional</span></h2></div>
+<div style="text-align: left;"><p>O objectivo desta equipa é contribuir ao mais alto nível para a compreensão da origem e evolução do universo e das suas estruturas em larga escala. A nossa prioridade estratégica são os aspectos observacionais da cosmologia (do rádio aos raios X), mas as nossas competências e interesses multidisciplinares incluem também modelos teóricos, fenomenologia, computação avançada e instrumentação astronómica.</p><a class="linkoncontent">Saber Mais</a>
+</div>  
+<br>
+<div><h2><span style=" " class="gca_html_editor_1">Astronomical Instrumentation</span></h2></div>
+<div style="text-align: left; "><p>The scientific participation in the technical development of Astronomical Instrumentation, which transverses both major scientific areas in CAUP, is also pursued. Its importance steams from the need to secure privileged access to existing and future facilities of the European Organisation for Astronomical Research in the Southern Hemisphere (ESO) and of the European Space Agency (ESA) and to contribute to the long term development of Astronomy in Portugal.</p><a class="linkoncontent">Saber Mais</a>
+</div>  
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+              
+<div class="d-none d-lg-block col-lg-4 col-xl-4 col-xxl-4 ml-auto" style="text-align:left">
+
+<div class="allcontentright">
+
+<p>Projetos em curso</p>
+            <div class="arquivo-container">
+  <div class="arquivo-item"><span><p class="eventname">Sondas astrofísicas da física fundamental</p>
+<p class="eventreference">FCT: 2022.04048.PTDC</p>
+<p class="eventstartdate">Início em 2023-01-01</p>
+>> Ver mais</span></div>
+
+  <div class="arquivo-item"><span><p class="eventname">Matéria escura e metais nas galáxias (DarkMAGE)</p>
+<p class="eventreference">PTDC/FIS-AST/4862/2020</p>
+<p class="eventstartdate">Início em 2021-09-01</p>
+>> Ver mais</span></div>
+</div>
+
+<p>Arquivo</p>
+
+            <div class="tag-container">
+  <div class="tag-item"><span class="tag">2016</span></div>
+  <div class="tag-item"><span class="tag">2015</span></div>
+  <div class="tag-item"><span class="tag">2014</span></div>
+    <div class="tag-item"><span class="tag">2013</span></div>
+      <div class="tag-item"><span class="tag">2012</span></div>
+</div>
+
+            <div class="hero-image">
+              
+                <img src="imagens/indeximg.jpg" class="hero-slide img-fluid active" alt="Banner 1" style="object-position: center;">
+                <img src="imagens/indeximg2.jpg" class="hero-slide img-fluid" alt="Banner 2" style="object-position: center;">
+                <img src="imagens/indeximg3.jpg" class="hero-slide img-fluid" alt="Banner 3" style="object-position: center;">
+                <img src="imagens/indeximg4.jpg" class="hero-slide img-fluid" alt="Banner 4" style="object-position: center;">
+
+</div>  
+</div>
+
+   </div>
+                                  
+                                                    <div class="d-none d-lg-block col-lg-1 col-xl-1 col-xxl-1 ml-auto" style="text-align:left"></div>
+
+
+                <div class="row d-flex">
+                  <div class="d-none d-lg-block col-lg-1 col-xl-1 col-xxl-1 ml-auto" style="text-align:left"></div>
+                  <div class="d-none d-lg-block col-lg-10 col-xl-10 col-xxl-10 ml-auto" style="text-align:left">
+<div class="linksendofpage">
+
+<a href="#" class="linkleft">Página Principal</a>
+
+<a href="#" class="linkright">História</a>
+</div>
+                  </div>
+                                    <div class="d-none d-lg-block col-lg-1 col-xl-1 col-xxl-1 ml-auto" style="text-align:left"></div>
+</div>
+
+
+    <!-- MEDIUM SCREENS -->
+
+
+        <div class="row d-flex">
+                                  <div class="col-1 col-sm-1 col-md-1 d-lg-none" style="text-align:left"></div>
+                        <div class="col-10 col-sm-10 col-md-10 d-lg-none ml-auto" style="text-align:left">
+    <div class="pageTitle">
+<h1><span>Áreas de Investigação</span></h1>
+</div>
+
+</div>
+                                  <div class="d-none d-md-block col-md-1 d-lg-none" style="text-align:left"></div>
+
+        </div>
+
+                <div class="row d-flex">
+                                  <div class="d-none d-md-block col-md-1 d-lg-none" style="text-align:left"></div>
+                  <div class="d-none d-md-block col-md-6 d-lg-none ml-auto" style="text-align:left">
+    <div id="content-container">
+        <div class="content-block">
+            <div class="content-right">
+                <div class="allcontent">
+                    
+<div style="text-align: left; margin-bottom: 20px;">A investigação científica organiza-se em duas grandes equipas cuja actividade se centra nos seguintes tópicos:
+    </div>
+                    
+<div><h2><span style="" class="gca_html_editor_1">Origem e Evolução de Estrelas e Planetas</span></h2></div>
+<div style="text-align: left;"><p>O objectivo central do trabalho desta equipa inclui o estudo da física fundamental que rege a formação e evolução de estrelas e planetas. O trabalho desenvolvido pelos elementos da equipa tem uma forte componente observacional e ainda uma extensa contribuição teórica e de modelação.</p><a class="linkoncontent">Saber Mais</a>
+    </div>
+<br>
+
+<div><h2><span style=" " class="gca_html_editor_1">Galáxias e Cosmologia Observacional</span></h2></div>
+<div style="text-align: left;"><p>O objectivo desta equipa é contribuir ao mais alto nível para a compreensão da origem e evolução do universo e das suas estruturas em larga escala. A nossa prioridade estratégica são os aspectos observacionais da cosmologia (do rádio aos raios X), mas as nossas competências e interesses multidisciplinares incluem também modelos teóricos, fenomenologia, computação avançada e instrumentação astronómica.</p><a class="linkoncontent">Saber Mais</a>
+</div>  
+<br>
+<div><h2><span style=" " class="gca_html_editor_1">Astronomical Instrumentation</span></h2></div>
+<div style="text-align: left;"><p>The scientific participation in the technical development of Astronomical Instrumentation, which transverses both major scientific areas in CAUP, is also pursued. Its importance steams from the need to secure privileged access to existing and future facilities of the European Organisation for Astronomical Research in the Southern Hemisphere (ESO) and of the European Space Agency (ESA) and to contribute to the long term development of Astronomy in Portugal.</p><a class="linkoncontent">Saber Mais</a>
+</div>  
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+ <div class="d-none d-md-block col-md-4 d-lg-none ml-auto" style="text-align:left">
+
+<div class="allcontentright">
+
+<p>Projetos em curso</p>
+            <div class="arquivo-container">
+  <div class="arquivo-item"><span><p class="eventname">Sondas astrofísicas da física fundamental</p>
+<p class="eventreference">FCT: 2022.04048.PTDC</p>
+<p class="eventstartdate">Início em 2023-01-01</p>
+>> Ver mais</span></div>
+
+  <div class="arquivo-item"><span><p class="eventname">Matéria escura e metais nas galáxias (DarkMAGE)</p>
+<p class="eventreference">PTDC/FIS-AST/4862/2020</p>
+<p class="eventstartdate">Início em 2021-09-01</p>
+>> Ver mais</span></div>
+</div>
+
+<p>Arquivo</p>
+
+            <div class="tag-container">
+  <div class="tag-item"><span class="tag">2016</span></div>
+  <div class="tag-item"><span class="tag">2015</span></div>
+  <div class="tag-item"><span class="tag">2014</span></div>
+    <div class="tag-item"><span class="tag">2013</span></div>
+      <div class="tag-item"><span class="tag">2012</span></div>
+</div>
+
+</div>
+
+
+   </div>
+                                     <div class="col-1 col-sm-1 col-md-1 d-lg-none" style="text-align:left"></div>
+
+
+
+                  <div class="col-10 col-sm-10 d-md-none ml-auto" style="text-align:left">
+    <div id="content-container">
+        <div class="content-block">
+            <div class="content-right">
+                <div class="allcontent">
+                    
+<div style="text-align: left; margin-bottom: 20px;">A investigação científica organiza-se em duas grandes equipas cuja actividade se centra nos seguintes tópicos:
+    </div>
+                    
+<div><h2><span style="" class="gca_html_editor_1">Origem e Evolução de Estrelas e Planetas</span></h2></div>
+<div style="text-align: left;"><p>O objectivo central do trabalho desta equipa inclui o estudo da física fundamental que rege a formação e evolução de estrelas e planetas. O trabalho desenvolvido pelos elementos da equipa tem uma forte componente observacional e ainda uma extensa contribuição teórica e de modelação.</p><a class="linkoncontent">Saber Mais</a>
+    </div>
+<br>
+
+<div><h2><span style=" " class="gca_html_editor_1">Galáxias e Cosmologia Observacional</span></h2></div>
+<div style="text-align: left;"><p>O objectivo desta equipa é contribuir ao mais alto nível para a compreensão da origem e evolução do universo e das suas estruturas em larga escala. A nossa prioridade estratégica são os aspectos observacionais da cosmologia (do rádio aos raios X), mas as nossas competências e interesses multidisciplinares incluem também modelos teóricos, fenomenologia, computação avançada e instrumentação astronómica.</p><a class="linkoncontent">Saber Mais</a>
+</div>  
+<br>
+<div><h2><span style=" " class="gca_html_editor_1">Astronomical Instrumentation</span></h2></div>
+<div style="text-align: left;"><p>The scientific participation in the technical development of Astronomical Instrumentation, which transverses both major scientific areas in CAUP, is also pursued. Its importance steams from the need to secure privileged access to existing and future facilities of the European Organisation for Astronomical Research in the Southern Hemisphere (ESO) and of the European Space Agency (ESA) and to contribute to the long term development of Astronomy in Portugal.</p><a class="linkoncontent">Saber Mais</a>
+</div>  
+
+</div>
+</div>
+</div>
+</div>
+</div>
+                                     <div class="col-1 col-sm-1 d-md-none" style="text-align:left"></div>
+                </div>
+                <div class="row d-flex">
+                                                       <div class="col-1 col-sm-1 d-md-none" style="text-align:left"></div>
+ <div class="col-10 col-sm-10 d-md-none ml-auto" style="text-align:left">
+
+<div class="allcontentright">
+
+<p>Projetos em curso</p>
+            <div class="arquivo-container">
+  <div class="arquivo-item"><span><p class="eventname">Sondas astrofísicas da física fundamental</p>
+<p class="eventreference">FCT: 2022.04048.PTDC</p>
+<p class="eventstartdate">Início em 2023-01-01</p>
+>> Ver mais</span></div>
+
+  <div class="arquivo-item"><span><p class="eventname">Matéria escura e metais nas galáxias (DarkMAGE)</p>
+<p class="eventreference">PTDC/FIS-AST/4862/2020</p>
+<p class="eventstartdate">Início em 2021-09-01</p>
+>> Ver mais</span></div>
+</div>
+
+<p>Arquivo</p>
+
+            <div class="tag-container">
+  <div class="tag-item"><span class="tag">2016</span></div>
+  <div class="tag-item"><span class="tag">2015</span></div>
+  <div class="tag-item"><span class="tag">2014</span></div>
+    <div class="tag-item"><span class="tag">2013</span></div>
+      <div class="tag-item"><span class="tag">2012</span></div>
+</div>
+
+</div>
+
+
+   </div>
+                                     <div class="col-1 col-sm-1 col-md-1 d-lg-none" style="text-align:left"></div>
+
+</div>
+</div>
+
+                <div class="row d-flex">
+ <div class="col-1 col-sm-1 col-md-1 d-lg-none" style="text-align:left"></div>
+<div class="col-10 col-sm-10 col-md-10 d-lg-none ml-auto" style="text-align:left">
+<div class="linksendofpage">
+
+<a href="#" class="linkleft">Página Principal</a>
+
+<a href="#" class="linkright">História</a>
+</div>
+                  </div>
+ <div class="col-1 col-sm-1 col-md-1 d-lg-none" style="text-align:left"></div>
+</div>
+
+
+
+
+
+
+
+</article>
+</div>
+
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+
+<footer>
+
+    <div id="footer" class="footer-container">
+
+      <!--ecras XXL-->
+
+        <div class="row d-flex" style="margin-bottom: 40px;">
+
+          <div class="d-none d-xxl-block col-xxl-3 ml-auto"></div>
+    <div class="d-none d-xxl-block col-xxl-3 ml-auto" style="text-align:left">
+
+        <a style="font-family:Roboto; font-size: 16px;">MAIS INFORMAÇÃO</a>
+        <hr class="smallline1">
+        <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Contactos</a><br>
+        <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Política de Privacidade</a><br>
+        <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Política de Cookies</a><br>
+        <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Termos e Condições</a><br>
+        <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Código de Conduta</a><br>
+        <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Mapa do Site</a><br>
+        <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#" target="_blank"> Ficha Técnica</a><br>
+    </div>
+
+    <div class="d-none d-xxl-block col-xxl-1 ml-auto"></div>
+            <div class="d-none d-xxl-block col-xxl-3 ml-auto" style="text-align:left">
+                    <a style="font-family:Roboto; font-size: 16px;">CONTACTOS</a>
+                    <hr class="smallline">  
+                        <div class="rodape-info"  >          
+                        <p>
+
+                            Centro de Astrofísica da Universidade do Porto<br>
+                            Rua das Estrelas<br>
+                            4150-762 Porto, Portugal<br>
+
+                        </p>
+                        <p>
+                            Email: geral@astro.up.pt </p>
+
+                            <p>
+                            Tel: +351 226 089 830 <br>(chamada para a rede fixa nacional)<br></p>
+                        </p>
+                        <a class="footer-social-icons" id="facebook" href="https://www.facebook.com/astro.up.pt" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+                        <a class="footer-social-icons" href="https://x.com/Astro_UP" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+                        <a class="footer-social-icons" href="https://www.youtube.com/user/CAUPTV" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+
+                    </div>
+
+        </div>
+
+                  <div class="d-none d-xxl-block col-xxl-2 ml-auto" style="text-align:left"></div>
+
+      <!-- END ecras XXL-->
+
+      <!--ecras XL-->
+
+                  <div class="d-none d-xl-block col-xl-3 d-xxl-none ml-auto"></div>
+                  <div class="d-none d-xl-block col-xl-3 d-xxl-none ml-auto" style="text-align:left">
+
+                      <a style="font-family:Roboto; font-size: 16px;">MAIS INFORMAÇÃO</a>
+                      <hr class="smallline1">
+                      <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Contactos</a><br>
+                      <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Política de Privacidade</a><br>
+                      <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Política de Cookies</a><br>
+                      <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Termos e Condições</a><br>
+                      <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Código de Conduta</a><br>
+                      <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Mapa do Site</a><br>
+                      <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#" target="_blank"> Ficha Técnica</a><br>
+                  </div>
+              
+                  <div class="d-none d-xl-block col-xl-1 d-xxl-none ml-auto"></div>
+                          <div class="d-none d-xl-block col-xl-4 d-xxl-none ml-auto" style="text-align:left">
+                                  <a style="font-family:Roboto; font-size: 16px;">CONTACTOS</a>
+                                  <hr class="smallline">
+                                      <div class="rodape-info"  >          
+                                      <p>
+              
+                                          Centro de Astrofísica da Universidade do Porto<br>
+                                          Rua das Estrelas<br>
+                                          4150-762 Porto, Portugal<br>
+              
+                                      </p>
+                                      <p>
+                                          Email: geral@astro.up.pt </p>
+              
+                                          <p>
+                                          Tel: +351 226 089 830 <br>(chamada para a rede fixa nacional)<br></p>
+                                      </p>
+                                      <a class="footer-social-icons" href="https://www.facebook.com/astro.up.pt" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+                                      <a class="footer-social-icons" href="https://x.com/Astro_UP" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+                                      <a class="footer-social-icons" href="https://www.youtube.com/user/CAUPTV" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+              
+                                  </div>
+              
+                      </div>
+              
+                                <div class="d-none d-xl-block col-xl-1 d-xxl-none ml-auto" style="text-align:left"></div>
+
+      <!--END ecras XL-->
+
+      <!-- ecras LG e MD -->
+
+<div class="d-none d-md-block col-md-1 d-xl-none ml-auto"></div>
+<div class="d-none d-md-block col-md-5 d-xl-none ml-auto" style="text-align:left">
+    <a style="font-family:Roboto; font-size: 16px;">MAIS INFORMAÇÃO</a>
+    <hr class="smallline1">
+    <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Contactos</a><br>
+    <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Política de Privacidade</a><br>
+    <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Política de Cookies</a><br>
+    <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Termos e Condições</a><br>
+    <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Código de Conduta</a><br>
+    <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Mapa do Site</a><br>
+    <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#" target="_blank"> Ficha Técnica</a><br>
+</div>
+
+<div class="d-none d-md-block col-md-1 d-xl-none ml-auto"></div>
+        <div class="d-none d-md-block col-md-4 d-xl-none ml-auto" style="text-align:left">
+                <a style="font-family:Roboto; font-size: 16px;">CONTACTOS</a>
+                <hr class="smallline">
+                    <div class="rodape-info"  >          
+                    <p>
+
+                        Centro de Astrofísica da Universidade do Porto<br>
+                        Rua das Estrelas<br>
+                        4150-762 Porto, Portugal<br>
+
+                    </p>
+                    <p>
+                        Email: geral@astro.up.pt </p>
+
+                        <p>
+                        Tel: +351 226 089 830 <br>(chamada para a rede fixa nacional)<br></p>
+                    </p>
+                    <a class="footer-social-icons" href="https://www.facebook.com/astro.up.pt" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+                    <a class="footer-social-icons" href="https://x.com/Astro_UP" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+                    <a class="footer-social-icons" href="https://www.youtube.com/user/CAUPTV" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+
+                </div>
+
+    </div>
+
+              <div class="d-none d-md-block col-md-1 d-xl-none ml-auto" style="text-align:left"></div>
+
+      <!-- END ecras MD -->
+
+      <!-- ecras SM -->
+<div class="d-none d-sm-block col-sm-1 d-md-none ml-auto"></div>
+<div class="d-none d-sm-block col-sm-5 d-md-none ml-auto" style="text-align:left">
+
+    <a style="font-family:Roboto; font-size: 16px;">MAIS INFORMAÇÃO</a>
+    <hr class="smallline1">
+    <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Contactos</a><br>
+    <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Política de Privacidade</a><br>
+    <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Política de Cookies</a><br>
+    <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Termos e Condições</a><br>
+    <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Código de Conduta</a><br>
+    <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Mapa do Site</a><br>
+    <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#" target="_blank"> Ficha Técnica</a><br>
+</div>
+
+<div class="d-none d-sm-block col-sm-1 d-md-none ml-auto"></div>
+        <div class="d-none d-sm-block col-sm-4 d-md-none ml-auto" style="text-align:left;">
+                <a style="font-family:Roboto; font-size: 16px;">CONTACTOS</a>
+                <hr class="smallline">
+                    <div class="rodape-info"  >          
+                    <p>
+
+                        Centro de Astrofísica da Universidade do Porto<br>
+                        Rua das Estrelas<br>
+                        4150-762 Porto, Portugal<br>
+
+                    </p>
+                    <p>
+                        Email: geral@astro.up.pt </p>
+
+                        <p>
+                        Tel: +351 226 089 830 <br>(chamada para a rede fixa nacional)<br></p>
+                    </p>
+                    <a class="footer-social-icons" href="https://www.facebook.com/astro.up.pt" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+                    <a class="footer-social-icons" href="https://x.com/Astro_UP" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+                    <a class="footer-social-icons" href="https://www.youtube.com/user/CAUPTV" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+
+                </div>
+
+    </div>
+    <div class="d-none d-sm-block col-sm-1 d-md-none ml-auto"></div>
+
+      <!-- END ecras SM -->
+
+      <!-- Ecras SM até 500px-->
+
+<div class="footercontentup500">
+  
+              <div class="col-1 d-sm-none ml-auto" style="text-align:left"></div>
+
+              <div class="col-6 d-sm-none ml-auto" style="text-align:left">
+                  <a style="font-family:Roboto; font-size: 16px;">MAIS INFORMAÇÃO</a>
+                  <hr class="smallline1">
+                  <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Contactos</a><br>
+                  <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Política de Privacidade</a><br>
+                  <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Política de Cookies</a><br>
+                  <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Termos e Condições</a><br>
+                  <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Código de Conduta</a><br>
+                  <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Mapa do Site</a><br>
+                  <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#" target="_blank"> Ficha Técnica</a><br>
+              </div>
+              
+                      <div class="col-4 d-sm-none ml-auto" style="text-align:left; padding-left: 5px;">
+                              <a style="font-family:Roboto; font-size: 16px;">CONTACTOS</a>
+                              <hr class="smallline">
+                                  <div class="rodape-info"  >          
+                                  <p>
+              
+                                      Centro de Astrofísica da Universidade do Porto<br>
+                                      Rua das Estrelas<br>
+                                      4150-762 Porto, Portugal<br>
+              
+                                  </p>
+                                  <p>
+                                      Email: geral@astro.up.pt </p>
+              
+                                      <p>
+                                      Tel: +351 226 089 830 <br>(chamada para a rede fixa nacional)<br></p>
+                                  </p>
+                                  <a class="footer-social-icons" href="https://www.facebook.com/astro.up.pt" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+                                  <a class="footer-social-icons" href="https://x.com/Astro_UP" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+                                  <a class="footer-social-icons" href="https://www.youtube.com/user/CAUPTV" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+              
+                              </div>
+              
+                  </div>
+                  <div class="col-1 d-sm-none ml-auto" style="text-align:left"></div>
+                          </div>
+
+
+
+                        </div>
+
+      <!-- END ecras SM até 500px-->
+
+      <!-- ecras SM abaixo 500px-->
+
+<div class="footercontentbelow500" >
+    <div class="row d-xs-flex justify-content-center d-sm-none">
+
+
+      <div class="col-1 col-sm-1 d-flex flex-column"></div>
+      <div class="col-10 col-sm-10 d-flex flex-column">
+        <div class="centerinformation" style=" margin-bottom: 30px;">
+          <div style="text-align: center;">
+          <a style="font-family:Roboto; font-size: 16px;">MAIS INFORMAÇÃO</a>
+          <hr class="smallline1" style="margin: 0 auto; margin-bottom: 10px; margin-top: 5px; ">
+        </div>
+          <div style="text-align: left; margin: 0 auto; margin-bottom: 10px; max-width: 300px; padding-left: 10px; font-size: 15px;">
+          <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Contactos</a><br>
+          <a style="font-family:Roboto; text-decoration: none;line-height:30px;color:white;text-transform: uppercase;" href="#"> Política de Privacidade</a><br>
+          <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Política de Cookies</a><br>
+          <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Termos e Condições</a><br>
+          <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Código de Conduta</a><br>
+          <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#"> Mapa do Site</a><br>
+          <a style="font-family:Roboto; text-decoration: none; line-height:30px;color:white;text-transform: uppercase;" href="#" target="_blank"> Ficha Técnica</a><br>
+        </div>
+        </div>
+      </div>
+       <div class="col-1 col-sm-1 d-flex flex-column"></div>
+      </div>
+      <div class="row d-xs-flex justify-content-center d-sm-none" >
+      
+        <div class="col-1 col-sm-1 d-flex flex-column"></div>
+        <div class="col-10 col-sm-10 d-flex flex-column">
+                <div class="centerinformation" style=" margin-bottom: 30px;">
+                  <div style="text-align: center;">
+                      <a style="font-family:Roboto; font-size: 16px;">CONTACTOS</a>
+                      <hr class="smallline" style="margin: 0 auto; margin-bottom: 10px; margin-top: 5px;">
+                  </div>
+                          <div class="rodape-info"  style="text-align: left; margin: 0 auto; max-width: 300px; padding-left: 10px; font-size: 13px;">          
+                          <p>
+      
+                              Centro de Astrofísica da Universidade do Porto<br>
+                              Rua das Estrelas<br>
+                              4150-762 Porto, Portugal<br>
+      
+                          </p>
+                          <p>
+                              Email: geral@astro.up.pt </p>
+      
+                              <p>
+                              Tel: +351 226 089 830 <br>(chamada para a rede fixa nacional)<br></p>
+                          </p>
+                          <a class="footer-social-icons" href="https://www.facebook.com/astro.up.pt" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+                          <a class="footer-social-icons" href="https://x.com/Astro_UP" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+                          <a class="footer-social-icons" href="https://www.youtube.com/user/CAUPTV" target="_new"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      
+                      </div>
+      
+          </div>
+      </div>
+      <div class="col-1 col-sm-1 d-flex flex-column"></div>
+    </div>
+
+
+  
+  </div>
+
+      <!-- END ecras SM abaixo 500px-->
+
+
+
+      <!-- watermark e login -->
+
+    <div class="row">
+
+      <hr class="smalllineend" />
+
+
+      <section class="">
+        <p class="d-flex justify-content-center align-items-center endfooter">
+          <span class="me-5">Copyright © 2025 CAUP</span>
+          <a href="#" class="loginfooter" style="font-size: 12px;line-height: 18px;   text-decoration: none; color: white;">
+ Login
+          </a>
+        </p>
+      </section>
+
+
+
+    </div>
+    </div>
+</footer>
+
+
+<script>
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll(".toplist > ul > li > a");
+
+  links.forEach(link => {
+    link.addEventListener("click", function (e) {
+      const parentLi = this.parentElement;
+      const hasSubmenu = parentLi.querySelector("ul");
+
+      if (hasSubmenu) {
+        e.preventDefault();
+        parentLi.classList.toggle("active");
+      }
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll(".bottomlist > ul > li > a");
+
+  links.forEach(link => {
+    link.addEventListener("click", function (e) {
+      const parentLi = this.parentElement;
+      const hasSubmenu = parentLi.querySelector("ul");
+
+      if (hasSubmenu) {
+        e.preventDefault();
+        parentLi.classList.toggle("active");
+      }
+    });
+  });
+});
+
+
+
+
+// animacao texto descricao Xl e XXL
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const textPoints = entry.target.querySelectorAll('.text-pointsmall');
+        textPoints.forEach(point => {
+          point.classList.add('animate');
+        });
+        observer.unobserve(entry.target); 
+      }
+    });
+  }, {
+    threshold: 0.3 
+  });
+
+
+  // funcoes menu acordeao do menu hamburguer
+  const target = document.querySelector('.containercaupdescriptionsmallanimated');
+  if (target) observer.observe(target);
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const allLis = document.querySelectorAll(".bottomlist > ul > li");
+
+    allLis.forEach(li => {
+      const submenu = li.querySelector("ul");
+      const link = li.querySelector("a");
+
+      if (submenu && link) {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          
+
+          submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+        });
+      }
+    });
+  });
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const allLis = document.querySelectorAll(".toplist > ul > li");
+
+    allLis.forEach(li => {
+      const submenu = li.querySelector("ul");
+      const link = li.querySelector("a");
+
+      if (submenu && link) {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          
+
+          submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+        });
+      }
+    });
+  });
+
+
+
+  function updateVisibleHeights() {
+      const elements = document.querySelectorAll('.resize-visible');
+
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const visibleHeight = Math.max(0, window.innerHeight - rect.top);
+        el.style.height = visibleHeight + 'px';
+      });
+    }
+
+    window.addEventListener('scroll', updateVisibleHeights);
+    window.addEventListener('resize', updateVisibleHeights);
+    window.addEventListener('load', updateVisibleHeights);
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const badges = document.querySelectorAll(".badge2");
+  let maxWidth = 0;
+
+
+  badges.forEach(badge => {
+    const width = badge.offsetWidth;
+    if (width > maxWidth) {
+      maxWidth = width;
+    }
+  });
+
+
+  badges.forEach(badge => {
+    badge.style.width = maxWidth + "px";
+  });
+});
+
+
+// carousel de imagens
+let currentIndex = 0;
+const slides = document.querySelectorAll('.hero-image img');
+console.log("Slides found for '.hero-image img':", slides); 
+const totalSlides = slides.length;
+
+function showSlide(index) {
+  console.log("Showing slide:", index); 
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+  });
+  if (slides[index]) {
+    slides[index].classList.add('active');
+  } else {
+    console.warn("Slide index out of bounds:", index);
+  }
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % totalSlides;
+  showSlide(currentIndex);
+}
+
+showSlide(currentIndex);
+setInterval(nextSlide, 5000);
+
+
+let smallIndex = 0;
+const smallSlides = document.querySelectorAll('.slideshow-wrapper .hero-slide');
+console.log("Slides found for '.slideshow-wrapper .hero-slide':", smallSlides);
+const totalSmallSlides = smallSlides.length;
+
+function showSmallSlide(index) {
+  console.log("Showing small slide:", index);
+  smallSlides.forEach((slide) => {
+    slide.classList.remove('active');
+  });
+  if (smallSlides[index]) {
+    smallSlides[index].classList.add('active');
+  } else {
+    console.warn("Small slide index out of bounds:", index);
+  }
+}
+
+function nextSmallSlide() {
+  smallIndex = (smallIndex + 1) % totalSmallSlides;
+  showSmallSlide(smallIndex);
+}
+
+showSmallSlide(smallIndex);
+setInterval(nextSmallSlide, 5000);
+
+function toggleDropdown(button) {
+  const li = button.closest("li");
+  const wasActive = li.classList.contains("active");
+
+
+  document.querySelectorAll(".header-downmedium .menu ul li.active").forEach(item => {
+    item.classList.remove("active");
+  });
+
+
+  if (!wasActive) {
+    li.classList.add("active");
+  }
+}
+
+
+document.addEventListener("click", function (e) {
+  const isClickInsideMenu = e.target.closest(".header-downmedium .menu ul li");
+  
+  if (!isClickInsideMenu) {
+    document.querySelectorAll(".header-downmedium .menu ul li.active").forEach(item => {
+      item.classList.remove("active");
+    });
+  }
+});
+
+function toggleDropdown1(button) {
+  const li = button.closest("li");
+  const wasActive = li.classList.contains("active");
+
+
+  document.querySelectorAll(".header-down .menu ul li.active").forEach(item => {
+    item.classList.remove("active");
+  });
+
+
+  if (!wasActive) {
+    li.classList.add("active");
+  }
+}
+
+
+document.addEventListener("click", function (e) {
+  const isClickInsideMenu = e.target.closest(".header-down .menu ul li");
+  
+  if (!isClickInsideMenu) {
+    document.querySelectorAll(".header-down .menu ul li.active").forEach(item => {
+      item.classList.remove("active");
+    });
+  }
+});
+
+
+function toggleDropdown2(button) {
+  const li = button.closest("li");
+  const wasActive = li.classList.contains("active");
+
+
+  document.querySelectorAll(".header-up .menu ul li.active").forEach(item => {
+    item.classList.remove("active");
+  });
+
+
+  if (!wasActive) {
+    li.classList.add("active");
+  }
+}
+
+
+document.addEventListener("click", function (e) {
+  const isClickInsideMenu = e.target.closest(".header-up  .menu ul li");
+  
+  if (!isClickInsideMenu) {
+    document.querySelectorAll(".header-up  .menu ul li.active").forEach(item => {
+      item.classList.remove("active");
+    });
+  }
+});
+</script>
+    
+</body>
+</html>
